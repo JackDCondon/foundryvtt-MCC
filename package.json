@@ -1,7 +1,7 @@
 {
-  "name": "dcc",
+  "name": "mcc",
   "version": "0.0.4",
-  "description": "Dungeon Crawl Classics RPG Support for Foundry VTT",
+  "description": "Mutant Crawl Classic RPG Support for Foundry VTT",
   "main": "module/dcc.js",
   "directories": {
     "test": "module/tests"
