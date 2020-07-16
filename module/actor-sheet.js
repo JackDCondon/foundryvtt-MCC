@@ -12,7 +12,7 @@ export class DCCActorSheet extends ActorSheet {
     static get defaultOptions() {
         return mergeObject(super.defaultOptions, {
             classes: ["dcc", "sheet", "actor"],
-            template: "systems/dcc/templates/actor-sheet-zero-level.html",
+            template: "systems/mcc/templates/actor-sheet-zero-level.html",
             width: 600,
             height: 600,
             tabs: [{navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description"}],
@@ -71,7 +71,7 @@ export class DCCActorSheet extends ActorSheet {
         //console.log(data.data);
 
         if (data.isNPC) {
-            this.options.template = "systems/dcc/templates/actor-sheet-npc.html"
+            this.options.template = "systems/mcc/templates/actor-sheet-npc.html"
         }
 
         return data;
@@ -97,6 +97,9 @@ export class DCCActorSheet extends ActorSheet {
 
             // ArtifactCheck
             html.find('.artifactcheck-label').click(this._onRollArtifactCheck.bind(this));
+
+            // HDDice
+            html.find('.hddice-label').click(this._onRollHDDice.bind(this));
 
 
             // Saving Throws
@@ -259,6 +262,12 @@ export class DCCActorSheet extends ActorSheet {
     _onRollArtifactCheck(event) {
         event.preventDefault();
         this.actor.rollArtifactCheck({event: event});
+
+    }
+
+    _onRollHDDice(event) {
+        event.preventDefault();
+        this.actor.rollHD({event: event});
 
     }
 

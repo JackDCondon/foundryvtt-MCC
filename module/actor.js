@@ -85,16 +85,19 @@ export class DCCActor extends Actor {
      * Roll HD
      */
     rollHD() {
+       // let formula = this.data.data.attributes.hitDice.value;
+       // console.log(formula);
+       // const roll = new Roll(formula);
         let formula = this.data.data.attributes.hitDice;
+        let roll = new Roll("@value", formula);
+        roll.roll();
 
-        const roll = new Roll(`${formula}`);
-        //let roll = new Roll(formula);
 
-        // Convert the roll to a chat message
-        roll.toMessage({
-            speaker: ChatMessage.getSpeaker({actor: this}),
-            flavor: game.i18n.localize("DCC.HitDice")
-        });
+
+        this.data.data.attributes.hp.value = roll.result;
+        this.data.data.attributes.hp.max = roll.result;
+        this.render();
+
     }
 
     /**
@@ -133,7 +136,7 @@ export class DCCActor extends Actor {
         let crit = "";
         if (Number(roll.dice[0].results[0]) === 20) {
             const critTableFilter = `Crit Table ${this.data.data.attributes.critical.table}`;
-            const pack = game.packs.get('dcc.criticalhits');
+            const pack = game.packs.get('mcc.criticalhits');
             await pack.getIndex(); //Load the compendium index
             let entry = pack.index.find(entity => entity.name.startsWith(critTableFilter));
             const table = await pack.getEntity(entry._id);
@@ -151,7 +154,7 @@ export class DCCActor extends Actor {
             fumbleDie = "1d4";
         }
         if (Number(roll.dice[0].results[0]) === 1) {
-            const pack = game.packs.get('dcc.fumbles');
+            const pack = game.packs.get('mcc.fumbles');
             await pack.getIndex(); //Load the compendium index
             let entry = pack.index.find(entity => entity.name.startsWith("Fumble"));
             const table = await pack.getEntity(entry._id);

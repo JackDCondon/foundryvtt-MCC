@@ -7,8 +7,8 @@
         <div class="flexrow">
             <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name"/></h1>
 
-            <div class="hd">
-                <label for="data.attributes.hitDice.value">{{localize "DCC.HD"}}</label>
+            <div class="hd box-title rollable" >
+                <label class="hddice-label box-title rollable" for="data.attributes.hitDice.value" >{{localize "DCC.HD"}}</label>
                 <input type="text" id="data.attributes.hitDice.value" name="data.attributes.hitDice.value"
                        value="{{data.attributes.hitDice.value}}" maxlength="20"/>
             </div>

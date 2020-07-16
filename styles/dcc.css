@@ -126,7 +126,16 @@
   line-height: 22px;
   font-size: 16px;
   border-top: 2px groove #eeede0;
-  border-left: 2px groove #eeede0; }
+  border-left: 2px groove #eeede0;
+ }
+
+
+ .dcc.sheet.actor .ability-scores .ability input.ability-score-raw {
+  height: 25px;
+  width: 30px;
+  margin: 0 auto;
+  line-height: 32px;
+  font-size: 16px; }
 
 /* ----------------------------------------- */
 /*  Armor                                  */

@@ -55,9 +55,9 @@ DCC.abilities.modifiers = {
  * @type {Object}
  */
 DCC.alignments = {
-  'l': "DCC.AlignmentL",
-  'n': "DCC.AlignmentN",
-  'c': "DCC.AlignmentC",
+  'l': "DCC.ClanOfCog"//,
+  //'n': "DCC.AlignmentN",
+ // 'c': "DCC.AlignmentC",
 };
 
 /* -------------------------------------------- */
