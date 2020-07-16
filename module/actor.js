@@ -47,6 +47,26 @@ export class DCCActor extends Actor {
         });
     }
 
+
+
+    rollArtifactCheck(options = {}) {
+        const label = "ArtifactCheck";
+        const abl = this.data.data.abilities["int"];
+        abl.mod = CONFIG.DCC.abilities.modifiers[abl.value] || 0;
+        const artifact = this.data.data.attributes.artifactcheck.value;
+        abl.label = CONFIG.DCC.abilities["int"];
+
+        let roll = new Roll("1d20+@abilMod+@artifactmod", {abilMod: abl.mod, artifactmod: artifact, critical: 20});
+
+        // Convert the roll to a chat message
+        roll.toMessage({
+            speaker: ChatMessage.getSpeaker({actor: this}),
+            flavor: "Artifact Check"
+        });
+    }
+
+
+
     /**
      * Roll Initiative
      */
@@ -58,6 +78,22 @@ export class DCCActor extends Actor {
         roll.toMessage({
             speaker: ChatMessage.getSpeaker({actor: this}),
             flavor: game.i18n.localize("DCC.Initiative")
+        });
+    }
+
+        /**
+     * Roll HD
+     */
+    rollHD() {
+        let formula = this.data.data.attributes.hitDice;
+
+        const roll = new Roll(`${formula}`);
+        //let roll = new Roll(formula);
+
+        // Convert the roll to a chat message
+        roll.toMessage({
+            speaker: ChatMessage.getSpeaker({actor: this}),
+            flavor: game.i18n.localize("DCC.HitDice")
         });
     }
 

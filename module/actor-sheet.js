@@ -95,6 +95,10 @@ export class DCCActorSheet extends ActorSheet {
             // Initiative
             html.find('.init-label').click(this._onRollInitiative.bind(this));
 
+            // ArtifactCheck
+            html.find('.artifactcheck-label').click(this._onRollArtifactCheck.bind(this));
+
+
             // Saving Throws
             html.find('.save-name').click(this._onRollSavingThrow.bind(this));
 
@@ -244,6 +248,17 @@ export class DCCActorSheet extends ActorSheet {
     _onRollInitiative(event) {
         event.preventDefault();
         this.actor.rollInitiative({event: event});
+
+    }
+
+        /**
+     * Handle rolling Initiative
+     * @param {Event} event   The originating click event
+     * @private
+     */
+    _onRollArtifactCheck(event) {
+        event.preventDefault();
+        this.actor.rollArtifactCheck({event: event});
 
     }
 

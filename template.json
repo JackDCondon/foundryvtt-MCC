@@ -55,6 +55,9 @@
           "init": {
             "value": 0
           },
+          "artifactcheck": {
+            "value": 0
+          },
           "speed": {
             "value": 30,
             "special": ""

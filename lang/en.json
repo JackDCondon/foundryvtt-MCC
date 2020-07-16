@@ -28,6 +28,7 @@
   "DCC.AbilityUseConsumableDestroyHint": "Using this {type} will consume it's final charge and it will be destroyed.",
   "DCC.AbilityUseConsume": "Consume Available Usage?",
   "DCC.AC": "AC",
+  "DCC.ArtifactCheck": "Artifact",
   "DCC.Action": "Action",
   "DCC.ActionDice": "Action Dice",
   "DCC.ActionPl": "Actions",
