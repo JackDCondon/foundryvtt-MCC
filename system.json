@@ -2,7 +2,7 @@
   "name": "mcc",
   "title": "Mutant Crawl Classics",
   "description": "M Crawl Classics from Goodman Games",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "minimumCoreVersion": "0.5.6",
   "compatibleCoreVersion": "0.6.5",
   "templateVersion": 2,
